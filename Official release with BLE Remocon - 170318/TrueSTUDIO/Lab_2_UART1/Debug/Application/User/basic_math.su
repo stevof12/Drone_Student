@@ -1,0 +1,2 @@
+basic_math.c:3:7:Sqrt	24	static
+basic_math.c:24:7:invSqrt	32	static

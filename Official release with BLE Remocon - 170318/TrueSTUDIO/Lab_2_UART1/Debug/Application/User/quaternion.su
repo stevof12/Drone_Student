@@ -1,0 +1,5 @@
+quaternion.c:6:6:QuaternionNorm	24	static
+quaternion.c:21:6:QuaternionMult	40	static
+quaternion.c:42:6:QuaternionRotation	80	static
+quaternion.c:72:6:QuaternionConj	16	static
+quaternion.c:82:6:QuaternionToEuler	72	static

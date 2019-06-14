@@ -1,0 +1,9 @@
+main_Lab_2.c:138:5:main	8	static
+main_Lab_2.c:182:6:UART1_init	48	static
+main_Lab_2.c:215:6:myprint	24	static
+main_Lab_2.c:233:6:SystemClock_Config	88	static
+main_Lab_2.c:282:6:MX_TIM2_Init	48	static
+main_Lab_2.c:319:6:MX_TIM4_Init	64	static
+main_Lab_2.c:364:6:MX_TIM9_Init	24	static
+main_Lab_2.c:390:6:MX_GPIO_Init	40	static
+main_Lab_2.c:416:6:HAL_TIM_PeriodElapsedCallback	16	static
