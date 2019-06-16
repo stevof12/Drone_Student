@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    steval_fcu001_v1.c
+ * @file    SPI_Lab_Code_Worksheet.c
  * @author  Competence Center Japan
  * @version V3.0.0 (MEMS library version)
  * @date    12-August-2016
@@ -124,7 +124,7 @@ void BSP_LED_DeInit(Led_TypeDef Led)
 *            @arg  LED3
 *            @arg  LED4
 * @retval None
-*/
+*/G:\Shared drives\Drone_Curriculum\LABS\Lab 4 SPI\SPI_Lab_Code_Answers.c
 void BSP_LED_On(Led_TypeDef Led)
 {
     HAL_GPIO_WritePin(GPIO_PORT[Led], GPIO_PIN[Led], GPIO_PIN_RESET);
@@ -171,17 +171,21 @@ DrvStatusTypeDef Sensor_IO_SPI_Init( void )
 {
   if(HAL_SPI_GetState( &SPI_Sensor_Handle) == HAL_SPI_STATE_RESET )
   {
-	//Part 1a code here:
-	//Initialize the clock to SPI2 and GPIOB
-   
-    
-	//Part 1b code here:
-    //Set up SPI2 SDA and CLK pins
-    //PB15 is S2_SDA
- 
-    //PB13 is S2_CLK
+
+     /********************************************************************************/
+     /* Your implementation starts here                                              */
+     /********************************************************************************/ 
     
 
+	  
+	  
+	  
+
+
+     /********************************************************************************/
+     /* Your implementation stops here                                               */
+     /********************************************************************************/ 
+    
     //HAL bookkeeping
     SPI_Sensor_Handle.Instance = STEVAL_FCU001_V1_SENSORS_SPI;//set SPI2 instance for HAL
     SPI_Sensor_Handle.Lock = HAL_UNLOCKED;//allocate and initialize SPI2 lock resource
@@ -209,6 +213,10 @@ DrvStatusTypeDef Sensor_IO_SPI_Init( void )
 
 uint8_t Sensor_IO_SPI_CS_Init_All(void)
 {
+     /********************************************************************************/
+     /* Your implementation starts here                                              */
+     /********************************************************************************/ 
+    
   //set output pins before initialization to prevent glitches
   //Part 2a code here
   
@@ -226,6 +234,15 @@ uint8_t Sensor_IO_SPI_CS_Init_All(void)
   
 
   //configure PC13
+	
+	
+	
+	
+
+     /********************************************************************************/
+     /* Your implementation stops here                                              */
+     /********************************************************************************/ 
+    
   
 
   return COMPONENT_OK;
@@ -236,6 +253,10 @@ uint8_t Sensor_IO_SPI_CS_Init(void *handle)
   DrvContextTypeDef *ctx = (DrvContextTypeDef *)handle;
   switch(ctx->spiDevice)
   {
+/********************************************************************************/
+/* Your implementation starts here                                              */
+/********************************************************************************/ 
+    
   case LSM6DSL:
 	//part 3a code here
 	
@@ -246,6 +267,9 @@ uint8_t Sensor_IO_SPI_CS_Init(void *handle)
     break;  
   case LPS22HB:
 	//part 3c code here
+/********************************************************************************/
+/* Your implementation stops here                                              */
+/********************************************************************************/ 
 	
     break;
   default:
