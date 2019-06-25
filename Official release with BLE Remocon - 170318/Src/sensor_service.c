@@ -134,6 +134,23 @@ tBleStatus safe_aci_gatt_update_char_value(uint16_t servHandle,
 #define ACI_GATT_UPDATE_CHAR_VALUE aci_gatt_update_char_value
 #endif /* ACC_BLUENRG_CONGESTION */
 
+
+tBleStatus Value_Update(uint16_t value1)
+{
+/********************************************************************************/
+/* Your implementation starts here                                                         */
+/********************************************************************************/ 
+
+	
+	
+	
+/********************************************************************************/
+/* Your implementation stops here                                                         */
+/********************************************************************************/ 
+
+
+  return BLE_STATUS_SUCCESS;
+}
 /**
  * @brief  Add the Config service using a vendor specific profile
  * @param  None
