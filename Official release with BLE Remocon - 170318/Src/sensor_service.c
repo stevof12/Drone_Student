@@ -134,6 +134,57 @@ tBleStatus safe_aci_gatt_update_char_value(uint16_t servHandle,
 #define ACI_GATT_UPDATE_CHAR_VALUE aci_gatt_update_char_value
 #endif /* ACC_BLUENRG_CONGESTION */
 
+tBleStatus Add_LAB_Service(void) {
+	tBleStatus ret;
+	int32_t NumberChars = 5;
+
+	uint8_t uuid[16];
+
+	COPY_HW_SENS_W2ST_SERVICE_UUID(uuid);
+	uuid[11] |= 0x0f;
+	ret = aci_gatt_add_serv(UUID_TYPE_128, uuid, PRIMARY_SERVICE,
+			1 + 3 * NumberChars, &HWServW2STHandle);
+
+	if (ret != BLE_STATUS_SUCCESS) {
+	}
+
+	/* Fill the Environmental BLE Characteristc */
+	COPY_ENVIRONMENTAL_W2ST_CHAR_UUID(uuid);
+//  /* Fill the Battery and Environmental BLE Characteristc */
+//  //COPY_BATT_ENV_W2ST_CHAR_UUID(uuid);
+//  if(TargetBoardFeatures.NumTempSensors==2) {
+//    uuid[14] |= 0x05; /* Two Temperature values*/
+//    EnvironmentalCharSize+=2*2;
+//  } else if(TargetBoardFeatures.NumTempSensors==1) {
+//    uuid[14] |= 0x04; /* One Temperature value*/
+//    EnvironmentalCharSize+=2;
+//  }
+	uuid[11] |= 0x0f;
+
+	uuid[14] |= 0x05; /* Two Temperature values*/
+	EnvironmentalCharSize += 2 * 2;
+
+	uuid[14] |= 0x08; /* Battery level (percentage of full battery) */
+	EnvironmentalCharSize += 2;
+
+	uuid[14] |= 0x10; /* Pressure value*/
+	EnvironmentalCharSize += 4;
+
+//  ret =  aci_gatt_add_char(HWServW2STHandle, UUID_TYPE_128, uuid, EnvironmentalCharSize,
+//                           CHAR_PROP_NOTIFY|CHAR_PROP_READ,
+//                           ATTR_PERMISSION_NONE,
+//                           GATT_NOTIFY_READ_REQ_AND_WAIT_FOR_APPL_RESP,
+//                           16, 0, &EnvironmentalCharHandle);
+//
+	ret = aci_gatt_add_char(HWServW2STHandle, UUID_TYPE_128, uuid,
+			2 + 4 + 2 + 2 + 2,
+			CHAR_PROP_NOTIFY | CHAR_PROP_READ,
+			ATTR_PERMISSION_NONE,
+			GATT_NOTIFY_READ_REQ_AND_WAIT_FOR_APPL_RESP, 16, 0,
+			&LabHandle);
+
+
+}
 
 tBleStatus Value_Update(uint16_t value1)
 {
