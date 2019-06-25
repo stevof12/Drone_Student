@@ -1256,6 +1256,9 @@ static void Init_BlueNRG_Custom_Services(void)
   } else {
      PRINTF("\r\nError while adding Config Service W2ST\r\n");
   }
+  //init lab service
+  Add_LAB_Service();
+
 }
 
 /**
