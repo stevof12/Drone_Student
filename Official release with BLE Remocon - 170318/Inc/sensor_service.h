@@ -76,8 +76,11 @@
 extern tBleStatus Add_HWServW2ST_Service(void);
 extern tBleStatus AccGyroMag_Update(SensorAxes_t *Acc,SensorAxes_t *Gyro,SensorAxes_t *Mag);
 extern tBleStatus AccEvent_Notify(uint16_t Command);
+extern tBleStatus Add_LAB_Service(void);
+extern tBleStatus Value_Update(uint16_t value1);
 
 extern tBleStatus ARMING_Update(uint8_t ArmingStatus);
+  
 extern tBleStatus Batt_Env_RSSI_Update(int32_t Press,uint16_t Batt,int16_t Temp,int16_t RSSI);
 
 extern tBleStatus Add_ConsoleW2ST_Service(void);
